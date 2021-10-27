@@ -1,0 +1,213 @@
+ ::-webkit-scrollbar {
+      width:  3px;
+      height: 100%;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background-image: -webkit-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);
+  }
+  
+  ::-webkit-scrollbar-track {
+      background: silver;
+  }
+  
+  body{
+      font-family: Baloo Da;
+      font-size: 1em;
+      color: #5E6A70;
+  }
+  
+  .divider{
+      border-bottom: 2px solid silver;
+      margin: 10px 0px;
+  }
+  
+  .rb-container{
+      width: 90%;
+      height: auto;
+      box-shadow: -10px 10px 15px 0px gray;
+      margin: 0 auto 50px auto;
+      border: 1px solid silver;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft{
+      background-color: #FFFFFF;	
+      padding: 10px 50px;
+   }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-1 > h5, .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > h5, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > h5, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > h5{
+      font-size: 30px;	
+      text-transform: uppercase;
+      position: relative;
+      color: #5E6A70;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-1 > p{
+      font-size: 13px;	
+      color: #5E6A70;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2, .rb-container .rb-wrapper .rb-bodyLeft .sec-3, .rb-container .rb-wrapper .rb-bodyLeft .sec-4{
+      margin-top: 50px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 .icon-wrapper, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 .icon-wrapper, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 .icon-wrapper{
+      background-color: #6A797E;
+      color: white;
+      height: 26px;
+      width: 28px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-top: -3px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > h5 > .icon-wrapper > span, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > h5 > .icon-wrapper > span, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > h5 > .icon-wrapper > span{
+      font-size: 23px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > h5:after{
+      content: '';
+      position: absolute;
+      background-color: #766E76;
+      height: 2px;
+      width: 75%;
+      top: 45%;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > .lblDegree, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > .lblDegree, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > .lblDegree{
+      color: #5E6A70;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 25px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > .lblDegree > span, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > .lblDegree > span, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > .lblDegree > span{
+      font-size: 16px;
+      font-family: Open Sans;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-2 > .lblDegree + p, .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > .lblDegree + p, .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > .lblDegree + p{
+      font-size: 13px;
+      color: #5E6A70;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-3 > h5:after{
+       content: '';
+      position: absolute;
+      background-color: #766E76;
+      height: 2px;
+      width: 67%;
+      top: 45%;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyLeft .sec-4 > h5:after{
+       content: '';
+      position: absolute;
+      background-color: #766E76;
+      height: 2px;
+      width: 80%;
+      top: 45%;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight{
+      background-color: #6A797E;	
+      padding: 10px 25px;
+      color: white;
+      height: 1439px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-1 > img{
+      border-radius: 50%;
+      height: 205px;
+      width: 200px;
+      margin: 10px auto 25px auto;
+      display: block;
+  } 
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-1 > h5{
+      font-size: 25px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-1 > p{
+      font-size: 15px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-2{
+      margin: 25px 0px;
+      padding: 5px;
+      background-color: #5B666C;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-2 > h5{
+      font-size: 13px;
+      color: white;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-2 .icon-wrapper{
+      background-color: #6A797E;
+      color: white;
+      height: 24px;
+      width: 26px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-top: -3px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-2 > h5 > .icon-wrapper > span{
+      font-size: 23px;
+      margin-right: 1px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3{
+      margin-top: 25px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > h5{
+      font-size: 30px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .lblProfessionalSkills, .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .lblPersonalSkills{
+      font-size: 16px;
+      color: white;
+      position: relative;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .lblProfessionalSkills:after{
+      content: '';
+      position: absolute;
+      background-color: silver;
+      height: 2px;
+      width: 45%;
+      top: 45%;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .lblSkillName{
+      margin-top: 5px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .progress{
+      height: 10px;
+      color: gray;
+      border-radius: 0; 
+      margin-top: -5px;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .progress .progress-bar{
+      background-image: none;
+      background-color: #5B666A;
+      margin-top: 0;
+  }
+  
+  .rb-container .rb-wrapper .rb-bodyRight .sec-3 > .lblPersonalSkills:after{
+      content: '';
+      position: absolute;
+      background-color: silver;
+      height: 2px;
+      width: 56%;
+      top: 45%;
+  }
+  
