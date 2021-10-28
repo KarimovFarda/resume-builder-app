@@ -250,12 +250,15 @@
   
   .resume .resume_left .resume_profile {
     width: 100%;
-    height: 280px;
   }
   
   .resume .resume_left .resume_profile img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    padding:20px 10px
   }
   
   .resume .resume_left .resume_content {
@@ -297,6 +300,16 @@
   .resume .resume_left ul li .icon {
     width: 35px;
     height: 35px;
+    background: #fff;
+    color: #0bb5f4;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 16px;
+    position: relative;
+  }
+  ul li .icon-interest{
+    width: 10px;
+    height: 10px;
     background: #fff;
     color: #0bb5f4;
     border-radius: 50%;
@@ -377,7 +390,7 @@
   .resume .resume_right ul li .date {
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   .resume .resume_right ul li .info {
@@ -389,25 +402,28 @@
   }
   
   .resume .resume_right .resume_work ul li:before,
-  .resume .resume_right .resume_education ul li:before {
+  .resume .resume_right .resume_education ul li:before,
+  .resume .resume_right .resume_certificate ul li:before
+   {
     content: "";
     position: absolute;
     top: 5px;
-    left: -25px;
-    width: 6px;
-    height: 6px;
+    left: -23.5px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     border: 2px solid #0bb5f4;
   }
   
   .resume .resume_right .resume_work ul li:after,
-  .resume .resume_right .resume_education ul li:after {
+  .resume .resume_right .resume_education ul li:after,
+  .resume .resume_right .resume_certificate ul li:after {
     content: "";
     position: absolute;
     top: 14px;
     left: -21px;
     width: 2px;
-    height: 115px;
+    height: 20px;
     background: #0bb5f4;
   }
   
@@ -442,4 +458,12 @@
   .resume .resume_right .resume_hobby ul li:last-child:before {
     display: none;
   }
-  
+.resume_info ul{
+    padding-left: 0 !important;
+}
+.resume_skills ul{
+    padding-left: 0 !important;
+}
+.resume_social ul{
+    padding-left: 0 !important;
+}

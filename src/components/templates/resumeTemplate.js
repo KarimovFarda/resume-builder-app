@@ -189,6 +189,15 @@ export const ResumeTemplate = (props) => {
 			 {props && props.formValues.websiteUrl}
              </div>
            </li>
+		   <li>
+             <div class="icon">
+			 <i class="fab fa-linkedin"></i>
+             </div>
+             <div class="data">
+			 {props && props.formValues.linkedinAccount}
+             </div>
+           </li>
+
          </ul>
        </div>
        <div class="resume_item resume_skills">
@@ -245,43 +254,35 @@ export const ResumeTemplate = (props) => {
        </div>
        <div class="resume_item resume_social">
          <div class="title">
-           <p class="bold">Social</p>
+           <p class="bold">Interest</p>
          </div>
          <ul>
            <li>
-             <div class="icon">
-               <i class="fab fa-facebook-square"></i>
+             <div class="icon-interest">
              </div>
              <div class="data">
                <p class="semi-bold">Facebook</p>
-               <p>Stephen@facebook</p>
              </div>
            </li>
            <li>
-             <div class="icon">
-               <i class="fab fa-twitter-square"></i>
+             <div class="icon-interest">
              </div>
              <div class="data">
                <p class="semi-bold">Twitter</p>
-               <p>Stephen@twitter</p>
              </div>
            </li>
            <li>
-             <div class="icon">
-               <i class="fab fa-youtube"></i>
+             <div class="icon-interest">
              </div>
              <div class="data">
                <p class="semi-bold">Youtube</p>
-               <p>Stephen@youtube</p>
              </div>
            </li>
            <li>
-             <div class="icon">
-               <i class="fab fa-linkedin"></i>
+             <div class="icon-interest">
              </div>
              <div class="data">
                <p class="semi-bold">Linkedin</p>
-               <p>{props && props.formValues.linkedinAccount}</p>
              </div>
            </li>
          </ul>
@@ -291,7 +292,7 @@ export const ResumeTemplate = (props) => {
   <div class="resume_right">
     <div class="resume_item resume_about">
         <div class="title">
-           <p class="bold">About us</p>
+           <p class="bold">About me</p>
          </div>
         <p>{props && props.formValues.about}</p>
     </div>
@@ -303,24 +304,11 @@ export const ResumeTemplate = (props) => {
             <li>
                 <div class="date">{props && props.formValues.jobStartDate} - {props && props.formValues.jobEndDate}</div> 
                 <div class="info">
-                     <h3 class="semi-bold">{props && props.formValues.positionName}</h3> 
-                  <p>{props && props.formValues.companyName}</p>
+                     <h5>{props && props.formValues.positionName}</h5> 
+                  <h6>{props && props.formValues.companyName}</h6>
                 </div>
             </li>
-            <li>
-              <div class="date">2015 - 2017</div>
-              <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
-            <li>
-              <div class="date">2017 - Present</div>
-              <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
+           
         </ul>
     </div>
     <div class="resume_item resume_education">
@@ -331,20 +319,29 @@ export const ResumeTemplate = (props) => {
             <li>
                 <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
                 <div class="info">
-                     <p class="semi-bold">{props && props.formValues.positionName}</p> 
-                  <p>{props && props.formValues.universityName}</p>
+                     <h5>{props && props.formValues.positionName}</h5> 
+                  <h6>{props && props.formValues.universityName}</h6>
                 </div>
             </li>
-            <li>
-              <div class="date">2000 - 2010</div>
-              <div class="info">
-                     <p class="semi-bold">Texas International School</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                </div>
-            </li>
+         
         </ul>
     </div>
-    <div class="resume_item resume_hobby">
+	<div class="resume_item resume_certificate">
+      <div class="title">
+           <p class="bold">Certificates</p>
+         </div>
+      <ul>
+            <li>
+                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
+                <div class="info">
+                     <h5>{props && props.formValues.positionName}</h5> 
+                  <h6>{props && props.formValues.universityName}</h6>
+                </div>
+            </li>
+         
+        </ul>
+    </div>
+    {/* <div class="resume_item resume_hobby">
       <div class="title">
            <p class="bold">Hobby</p>
          </div>
@@ -354,7 +351,7 @@ export const ResumeTemplate = (props) => {
          <li><i class="fas fa-music"></i></li>
          <li><i class="fab fa-pagelines"></i></li>
       </ul>
-    </div>
+    </div> */}
   </div>
 </div>
     )

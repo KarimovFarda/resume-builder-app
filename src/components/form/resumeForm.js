@@ -3,6 +3,7 @@ import './resumeForm.scss'
 import { useHistory } from 'react-router'
 export const ResumeForm = (props) => {
     const history = useHistory()
+    const [image,setImage] = useState("")
     const [fullName,setFullName] = useState("")
     const [title,setTitle] = useState("")
     const [address,setAddress] = useState("")
@@ -19,11 +20,13 @@ export const ResumeForm = (props) => {
     const [positionName, setPositionName] = useState("")
     const [jobStartDate, setJobStartDate] = useState("")
     const [jobEndDate, setJobEndDate] = useState("")
+
    function formSubmitted(e){
        e.preventDefault()
-        props.getValue({fullname : fullName,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
+        props.getValue({fullname : fullName,image:image,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
         history.push("/template")
    }
+  
     return (
 
 <form onSubmit={formSubmitted}>
@@ -33,6 +36,8 @@ export const ResumeForm = (props) => {
   </div>
 
   <h2>Personal Details</h2>
+
+ 
 
   <div className="form-group">
     <label htmlFor="name">Full Name <span>*</span></label>
@@ -61,19 +66,6 @@ export const ResumeForm = (props) => {
     <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="email" placeholder="example@mail.com"/>
     <div id="email__error" className="error"></div>
   </div>
-{/* 
-  <div className="row">
-  <div className="form-group col-">
-    <label htmlFor="email">Email <span>*</span></label>
-    <input type="text" name="email" id="email" placeholder="example@mail.com"/>
-    <div id="email__error" className="error"></div>
-  </div>
-  <div className="form-group col-6">
-    <label htmlFor="email">Email <span>*</span></label>
-    <input type="text" name="email" id="email" placeholder="example@mail.com"/>
-    <div id="email__error" className="error"></div>
-  </div>
-      </div> */}
       <div class="row">
     <div class="col">
     <label htmlFor="email">Linkedin</label>
@@ -156,9 +148,9 @@ export const ResumeForm = (props) => {
   <div className="form-group">
     <label htmlFor="job-1__details">Add Skills</label>
     <input type="text" className="form-control"/>
-
+   <button class="btn btn-primary"> Add </button>
   </div>
-
+  
   {/* <div className="line-break"></div>
 
   <h3>Past Job</h3>
