@@ -154,8 +154,8 @@ export const ResumeTemplate = (props) => {
      <div class="resume_content">
        <div class="resume_item resume_info">
          <div class="title">
-           <p class="bold">stephen colbert</p>
-           <p class="regular">Designer</p>
+           <p class="bold">{props && props.formValues.fullName}</p>
+           <p class="regular">{props && props.formValues.title}</p>
          </div>
          <ul>
            <li>
@@ -163,7 +163,7 @@ export const ResumeTemplate = (props) => {
                <i class="fas fa-map-signs"></i>
              </div>
              <div class="data">
-               21 Street, Texas <br /> USA
+			 {props && props.formValues.address}
              </div>
            </li>
            <li>
@@ -171,15 +171,14 @@ export const ResumeTemplate = (props) => {
                <i class="fas fa-mobile-alt"></i>
              </div>
              <div class="data">
-               +324 4445678
-             </div>
+			 {props && props.formValues.phoneNumber}             </div>
            </li>
            <li>
              <div class="icon">
                <i class="fas fa-envelope"></i>
              </div>
              <div class="data">
-               stephen@gmail.com
+			 {props && props.formValues.email}
              </div>
            </li>
            <li>
@@ -187,7 +186,7 @@ export const ResumeTemplate = (props) => {
                <i class="fab fa-weebly"></i>
              </div>
              <div class="data">
-               www.stephen.com
+			 {props && props.formValues.websiteUrl}
              </div>
            </li>
          </ul>
@@ -282,7 +281,7 @@ export const ResumeTemplate = (props) => {
              </div>
              <div class="data">
                <p class="semi-bold">Linkedin</p>
-               <p>Stephen@linkedin</p>
+               <p>{props && props.formValues.linkedinAccount}</p>
              </div>
            </li>
          </ul>
@@ -294,7 +293,7 @@ export const ResumeTemplate = (props) => {
         <div class="title">
            <p class="bold">About us</p>
          </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
+        <p>{props && props.formValues.about}</p>
     </div>
     <div class="resume_item resume_work">
         <div class="title">
@@ -302,10 +301,10 @@ export const ResumeTemplate = (props) => {
          </div>
         <ul>
             <li>
-                <div class="date">2013 - 2015</div> 
+                <div class="date">{props && props.formValues.jobStartDate} - {props && props.formValues.jobEndDate}</div> 
                 <div class="info">
-                     <p class="semi-bold">Lorem ipsum dolor sit amet.</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                     <h3 class="semi-bold">{props && props.formValues.positionName}</h3> 
+                  <p>{props && props.formValues.companyName}</p>
                 </div>
             </li>
             <li>
@@ -330,10 +329,10 @@ export const ResumeTemplate = (props) => {
          </div>
       <ul>
             <li>
-                <div class="date">2010 - 2013</div> 
+                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
                 <div class="info">
-                     <p class="semi-bold">Web Designing (Texas University)</p> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                     <p class="semi-bold">{props && props.formValues.positionName}</p> 
+                  <p>{props && props.formValues.universityName}</p>
                 </div>
             </li>
             <li>

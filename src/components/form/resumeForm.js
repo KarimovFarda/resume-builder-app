@@ -10,17 +10,18 @@ export const ResumeForm = (props) => {
     const [email,setEmail] = useState("")
     const [linkedinAccount,setLinkedinAccount] = useState("")
     const [websiteUrl,setWebsiteUrl] = useState("")
+    const [about,setAbout] = useState("")
     const [universityName,setUniversityName] = useState("")
     const [profession, setProfession] = useState("")
     const [educationStartDate, setEducationStartDate] = useState("")
     const [educationEndDate, setEducationEndDate] = useState("")
     const [companyName,setCompanyName] = useState("")
-    const [positionName, setProfessionName] = useState("")
+    const [positionName, setPositionName] = useState("")
     const [jobStartDate, setJobStartDate] = useState("")
-    const [jobnEndDate, setJobEndDate] = useState("")
+    const [jobEndDate, setJobEndDate] = useState("")
    function formSubmitted(e){
        e.preventDefault()
-        props.getValue({fullname : fullName,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl})
+        props.getValue({fullname : fullName,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
         history.push("/template")
    }
     return (
@@ -85,7 +86,7 @@ export const ResumeForm = (props) => {
   </div>
   <div className="form-group">
     <label htmlFor="about">About You</label>
-    <textarea name="about" id="about"
+    <textarea name="about" value={about} onChange={(e) => {setAbout(e.target.value)}}id="about"
               placeholder="Three or four sentences about your personality, work ethic, interests, and/or more"></textarea>
   </div>
 
@@ -127,20 +128,20 @@ export const ResumeForm = (props) => {
   <h3>Most Recent Job</h3>
   <div className="form-group">
   <label htmlFor="job-1__details">Company Name</label>
-  <input type="text"  className="form-control"/>
+  <input type="text" value={companyName} onChange={(e) => {setCompanyName(e.target.value)}} className="form-control"/>
 </div>
 <div className="form-group">
   <label htmlFor="job-1__details">Position Name</label>
-  <input type="text" className="form-control"/>
+  <input type="text" value={positionName} onChange={(e) => {setPositionName(e.target.value)}} className="form-control"/>
 </div>
   <div className="form-date-group">
     <div className="form-group">
       <label htmlFor="job-1__start">Start Date</label>
-      <input type="date" name="job-1__start" id="job-1__start"/>
+      <input type="date" value={jobStartDate} onChange={(e) => {setJobStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
     </div>
     <div className="form-group">
       <label htmlFor="job-1__end">End Date</label>
-      <input type="date" name="job-1__end" id="job-1__end"/>
+      <input type="date" value={jobEndDate} onChange={(e) => {setJobEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
     </div>
   </div>
 
