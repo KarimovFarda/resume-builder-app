@@ -149,7 +149,7 @@ export const ResumeTemplate = (props) => {
 <div class="resume">
    <div class="resume_left">
      <div class="resume_profile">
-       <img src="https://i.imgur.com/eCijVBe.png" alt="profile_pic"/>
+       <img src={props.formValues.image} alt="profile_pic"/>
      </div>
      <div class="resume_content">
        <div class="resume_item resume_info">

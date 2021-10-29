@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
+import React, {useDebugValue, useEffect, useLayoutEffect, useState} from 'react'
 import './resumeForm.scss'
 import { useHistory } from 'react-router'
 export const ResumeForm = (props) => {
     const history = useHistory()
-    const [image,setImage] = useState("")
     const [fullName,setFullName] = useState("")
     const [title,setTitle] = useState("")
     const [address,setAddress] = useState("")
@@ -20,13 +19,13 @@ export const ResumeForm = (props) => {
     const [positionName, setPositionName] = useState("")
     const [jobStartDate, setJobStartDate] = useState("")
     const [jobEndDate, setJobEndDate] = useState("")
+    const [image, setImage] = useState(null)
 
    function formSubmitted(e){
        e.preventDefault()
         props.getValue({fullname : fullName,image:image,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
         history.push("/template")
    }
-  
     return (
 
 <form onSubmit={formSubmitted}>
@@ -37,13 +36,18 @@ export const ResumeForm = (props) => {
 
   <h2>Personal Details</h2>
 
- 
-
   <div className="form-group">
     <label htmlFor="name">Full Name <span>*</span></label>
     <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} name="name" id="name" placeholder="Robert Norman Ross"/>
     <div id="name__error" className="error"></div>
   </div>
+
+  <div className="form-group">
+    <label htmlFor="name">Image <span>*</span></label>
+    <input type="file"  onChange={e=>setImage(URL.createObjectURL(e.target.files[0]))} name="name" id="name" placeholder="Robert Norman Ross"/>
+    <div id="name__error" className="error"></div>
+  </div>
+
 
   <div className="form-group">
     <label htmlFor="name">Title <span>*</span></label>
@@ -82,11 +86,7 @@ export const ResumeForm = (props) => {
               placeholder="Three or four sentences about your personality, work ethic, interests, and/or more"></textarea>
   </div>
 
-  {/* <div className="form-group">
-    <label htmlFor="career">Career Objectives</label>
-    <textarea name="career" id="career"
-              placeholder="One or two sentences about what you wish to accomplish in your career"></textarea>
-  </div> */}
+
 
 <div className="line-break"></div>
 
@@ -148,7 +148,6 @@ export const ResumeForm = (props) => {
   <div className="form-group">
     <label htmlFor="job-1__details">Add Skills</label>
     <input type="text" className="form-control"/>
-   <button class="btn btn-primary"> Add </button>
   </div>
   
   {/* <div className="line-break"></div>
