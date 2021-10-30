@@ -13,20 +13,84 @@ export const ResumeForm = (props) => {
     const [about,setAbout] = useState("")
     const [universityName,setUniversityName] = useState("")
     const [profession, setProfession] = useState("")
-    const [educationStartDate, setEducationStartDate] = useState("")
-    const [educationEndDate, setEducationEndDate] = useState("")
+    let [educationStartDate, setEducationStartDate] = useState("")
+    let [educationEndDate, setEducationEndDate] = useState("")
     const [companyName,setCompanyName] = useState("")
     const [positionName, setPositionName] = useState("")
-    const [jobStartDate, setJobStartDate] = useState("")
-    const [jobEndDate, setJobEndDate] = useState("")
+    let [jobStartDate, setJobStartDate] = useState("")
+    let [jobEndDate, setJobEndDate] = useState("")
     const [image, setImage] = useState(null)
     const [skillName,setSkillName] = useState("")
     const [skills,setSkills] = useState([])
     const [skillCount,setSkillCount] = useState(0)
-   function formSubmitted(e){
+    const [hobbyName,setHobbyName] = useState("")
+    const [hobbies,setHobbies] = useState([])
+    const [hobbyCount,setHobbyCount] = useState(0);
+    const [certificateName,setCertificateName] = useState("")
+    const [institutionName,setInstitutionName] = useState("")
+    let [issueDate,setIssueDate] = useState("")
+    let [expirationDate,setExpirationDate] = useState("")
+    const monthName = ["January","February",'March',"April","May","June","July","August","September","October","November","December"]
+      
+      function formSubmitted(e){
        e.preventDefault()
-        props.getValue({fullname : fullName,image:image,skills:skills,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
+
+       if(Number(jobStartDate.slice(5)) > 9){
+        jobStartDate = jobStartDate.slice(0,4) + " " + monthName[Number(jobStartDate.slice(5)) - 1]
+        
+      }else{
+        jobStartDate = jobStartDate.slice(0,4) + " " + monthName[Number(jobStartDate.slice(6)) - 1]
+
+      }
+
+      if(Number(jobEndDate.slice(5)) > 9){
+        jobEndDate = jobEndDate.slice(0,4) + " " + monthName[Number(jobEndDate.slice(5)) - 1]
+        
+      }else{
+        jobEndDate = jobEndDate.slice(0,4) + " " + monthName[Number(jobEndDate.slice(6)) - 1]
+
+      }
+
+      
+      if(Number(educationStartDate.slice(5)) > 9){
+        educationStartDate = educationStartDate.slice(0,4) + " " + monthName[Number(educationStartDate.slice(5)) - 1]
+        
+      }else{
+        educationStartDate = educationStartDate.slice(0,4) + " " + monthName[Number(educationStartDate.slice(6)) - 1]
+
+      }
+
+
+      if(Number(educationEndDate.slice(5)) > 9){
+        educationEndDate = educationEndDate.slice(0,4) + " " + monthName[Number(educationEndDate.slice(5)) - 1]
+        
+      }else{
+        educationEndDate = educationEndDate.slice(0,4) + " " + monthName[Number(educationEndDate.slice(6)) - 1]
+
+      }
+
+
+      if(Number(expirationDate.slice(5)) > 9){
+        expirationDate = expirationDate.slice(0,4) + " " + monthName[Number(expirationDate.slice(5)) - 1]
+        
+      }else{
+        expirationDate = expirationDate.slice(0,4) + " " + monthName[Number(expirationDate.slice(6)) - 1]
+
+      }
+
+
+      if(Number(issueDate.slice(5)) > 9){
+        issueDate = issueDate.slice(0,4) + " " + monthName[Number(issueDate.slice(5)) - 1]
+        
+      }else{
+        issueDate = issueDate.slice(0,4) + " " + monthName[Number(issueDate.slice(6)) - 1]
+
+      }
+        props.getValue({fullname : fullName,image:image,skills:skills,hobbies:hobbies,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate,    certificateName:certificateName,institutionName:institutionName,expirationDate:expirationDate,issueDate:issueDate
+        })
+      
         history.push("/template")
+
    }
    useEffect(() => {
      if(skillName){
@@ -35,6 +99,13 @@ export const ResumeForm = (props) => {
     setSkillName("")
      }
    },[skillCount])
+   useEffect(() => {
+    if(hobbyName){
+   hobbies.push(hobbyName)
+   setHobbies(hobbies)
+   setHobbyName("")
+    }
+  },[hobbyCount])
     return (
 
 <form onSubmit={formSubmitted}>
@@ -173,53 +244,58 @@ export const ResumeForm = (props) => {
     )
   })}
   </div>
-  {/* <div className="line-break"></div>
-
-  <h3>Past Job</h3>
-
-  <div className="form-date-group">
-    <div className="form-group">
-      <label htmlFor="job-2__start">Start Date</label>
-      <input type="date" name="job-2__start" id="job-2__start"/>
-    </div>
-    <div className="form-group">
-      <label htmlFor="job-2__end">End Date</label>
-      <input type="date" name="job-2__end" id="job-2__end"/>
-    </div>
-  </div>
-
-  <div className="form-group">
-    <label htmlFor="job-2__details">Position Details</label>
-    <textarea name="job-2__details" id="job-2__details"></textarea>
-  </div>
-
   <div className="line-break"></div>
 
-  <h3>Another Past Job</h3>
+<h2>Certificates</h2>
 
-  <div className="form-date-group">
-    <div className="form-group">
-      <label htmlFor="job-3__start">Start Date</label>
-      <input type="date" name="job-3__start" id="job-3__start"/>
-    </div>
-    <div className="form-group">
-      <label htmlFor="job-3__end">End Date</label>
-      <input type="date" name="job-3__end" id="job-3__end"/>
-    </div>
+<div className="form-group">
+<label htmlFor="job-1__details">Certificate Name</label>
+<input type="text" value={certificateName} onChange={(e) => {setCertificateName(e.target.value)}} className="form-control"/>
+</div>
+<div className="form-group">
+<label htmlFor="job-1__details">Institution Name</label>
+<input type="text" value={institutionName} onChange={(e) => {setInstitutionName(e.target.value)}} className="form-control"/>
+</div>
+<div className="form-date-group">
+<div className="form-group">
+    <label htmlFor="job-1__start">Issue Date</label>
+    <input type="month" value={issueDate} onChange={(e) => {setIssueDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
+  </div>
+  <div className="form-group">
+    <label htmlFor="job-1__start">Expiration Date</label>
+    <input type="month" value={expirationDate} onChange={(e) => {setExpirationDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
+  </div>
   </div>
 
-  <div className="form-group">
-    <label htmlFor="job-3__details">Position Details</label>
-    <textarea name="job-3__details" id="job-3__details"></textarea>
-  </div> */}
 
-  {/* <div className="line-break"></div>
 
-  <div className="form-group">
-    <label htmlFor="references">References</label>
-    <textarea name="references" id="references"></textarea>
-  </div> */}
 
+  <div className="line-break"></div>
+  <h2>Hobbies</h2>
+  <label htmlFor="job-1__details" class="input-group-label">Add Hobbies</label>
+
+  <div className="input-group">
+    <input type="text" value={hobbyName} onChange={(e) => setHobbyName(e.target.value)} onKeyUp={(e) => {
+      if (e.key === 'Enter') {
+        setHobbyCount(hobbyCount + 1);e.preventDefault()}
+    }
+    }
+       className="form-control"/>
+    <button class="btn btn-info input-group-text"  onClick={(e) => {setHobbyCount(hobbyCount + 1);e.preventDefault()}} >Add</button>
+  
+  </div>
+  <div class="d-flex w-100">
+  {hobbies && hobbies.map(function(item){
+    return (
+      <div class="alert alert-secondary alert-dismissible fade show " role="alert">
+    <strong>{item}</strong>
+    <button  type="button" class="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {hobbies.splice(hobbies.indexOf(item),1);setHobbyCount(hobbyCount-1);setHobbies(hobbies)}}>
+    &times;
+    </button>
+  </div>
+    )
+  })}
+  </div>
   <div className="line-break"></div>
 
   <input type="submit" value="Create Resume" id="create-resume"/>

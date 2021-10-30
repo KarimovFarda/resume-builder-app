@@ -274,7 +274,10 @@
   }
   
   .resume .resume_left .regular {
-    color: #b1eaff;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
   }
   
   .resume .resume_item {
@@ -327,7 +330,8 @@
   }
   
   .resume .resume_left ul li .data {
-    color: #b1eaff;
+    color: white;
+    font-weight: 500;
   }
   
   .resume .resume_left .resume_skills ul li {
@@ -424,10 +428,16 @@
     top: 14px;
     left: -21px;
     width: 2px;
-    height: 20px;
+    height: 70px;
     background: #0bb5f4;
   }
-  
+  .info > h6:first-child{
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  .info > h6:nth-child(2){
+    font-size: 1.2rem;
+  }
   .resume .resume_right .resume_hobby ul {
     display: flex;
     justify-content: space-between;

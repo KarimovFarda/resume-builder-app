@@ -1,7 +1,7 @@
 import React from 'react'
 import './resumeTemplate.scss'
 export const ResumeTemplate = (props) => {
-  console.log(props.formValues.skills)
+
   return (
 <div class="resume">
    <div class="resume_left">
@@ -59,7 +59,7 @@ export const ResumeTemplate = (props) => {
        </div>
        <div class="resume_item resume_skills">
          <div class="title">
-           <p class="bold">skill's</p>
+           <p class="bold">skills</p>
          </div>
          <ul>
            {props.formValues.skills && props.formValues.skills.map((item) => {
@@ -77,37 +77,23 @@ export const ResumeTemplate = (props) => {
        </div>
        <div class="resume_item resume_social">
          <div class="title">
-           <p class="bold">Interest</p>
+           <p class="bold">Hobbies</p>
          </div>
          <ul>
-           <li>
-             <div class="icon-interest">
-             </div>
-             <div class="data">
-               <p class="semi-bold">Facebook</p>
-             </div>
-           </li>
-           <li>
-             <div class="icon-interest">
-             </div>
-             <div class="data">
-               <p class="semi-bold">Twitter</p>
-             </div>
-           </li>
-           <li>
-             <div class="icon-interest">
-             </div>
-             <div class="data">
-               <p class="semi-bold">Youtube</p>
-             </div>
-           </li>
-           <li>
-             <div class="icon-interest">
-             </div>
-             <div class="data">
-               <p class="semi-bold">Linkedin</p>
-             </div>
-           </li>
+
+         {props.formValues.hobbies && props.formValues.hobbies.map((item) => {
+             return (
+              <li>
+              <div class="icon-interest">
+              </div>
+              <div class="data">
+                <p class="semi-bold">{item}</p>
+              </div>
+            </li>
+             )
+           })}
+          
+          
          </ul>
        </div>
      </div>
@@ -125,11 +111,12 @@ export const ResumeTemplate = (props) => {
          </div>
         <ul>
             <li>
-                <div class="date">{props && props.formValues.jobStartDate} - {props && props.formValues.jobEndDate}</div> 
                 <div class="info">
-                     <h5>{props && props.formValues.positionName}</h5> 
+                     <h6>{props && props.formValues.positionName}</h6> 
                   <h6>{props && props.formValues.companyName}</h6>
                 </div>
+                <div class="date">{props && props.formValues.jobStartDate} - {props && props.formValues.jobEndDate}</div> 
+
             </li>
            
         </ul>
@@ -140,11 +127,12 @@ export const ResumeTemplate = (props) => {
          </div>
       <ul>
             <li>
-                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
                 <div class="info">
-                     <h5>{props && props.formValues.positionName}</h5> 
+                     <h6>{props && props.formValues.positionName}</h6> 
                   <h6>{props && props.formValues.universityName}</h6>
                 </div>
+                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
+
             </li>
          
         </ul>
@@ -155,11 +143,13 @@ export const ResumeTemplate = (props) => {
          </div>
       <ul>
             <li>
-                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
+
                 <div class="info">
-                     <h5>{props && props.formValues.positionName}</h5> 
-                  <h6>{props && props.formValues.universityName}</h6>
+                     <h6>{props && props.formValues.certificateName}</h6> 
+                  <h6>{props && props.formValues.institutionName}</h6>
                 </div>
+                <div class="date">{props && props.formValues.issueDate} - {props && props.formValues.expirationDate}</div> 
+
             </li>
          
         </ul>
