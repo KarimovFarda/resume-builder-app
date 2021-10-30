@@ -1,4 +1,4 @@
-import React, {useDebugValue, useEffect, useLayoutEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './resumeForm.scss'
 import { useHistory } from 'react-router'
 export const ResumeForm = (props) => {
@@ -20,7 +20,8 @@ export const ResumeForm = (props) => {
     const [jobStartDate, setJobStartDate] = useState("")
     const [jobEndDate, setJobEndDate] = useState("")
     const [image, setImage] = useState(null)
-
+    const [skills,setSkills] = useState([])
+    const [skillCount,setSkillCount] = useState(0)
    function formSubmitted(e){
        e.preventDefault()
         props.getValue({fullname : fullName,image:image,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
@@ -43,7 +44,7 @@ export const ResumeForm = (props) => {
   </div>
 
   <div className="form-group">
-    <label htmlFor="name">Image <span>*</span></label>
+    <label htmlFor="name">Image for Resume <span>*</span></label>
     <input type="file"  onChange={e=>setImage(URL.createObjectURL(e.target.files[0]))} name="name" id="name" placeholder="Robert Norman Ross"/>
     <div id="name__error" className="error"></div>
   </div>
@@ -56,12 +57,12 @@ export const ResumeForm = (props) => {
   </div>
 
   <div className="form-group">
-    <label htmlFor="address">Address</label>
+    <label htmlFor="address">Address <span>*</span></label>
     <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} name="address" id="address" placeholder="4059 Mt Lee Dr. Hollywood, CA 90068"/>
   </div>
 
   <div className="form-group">
-    <label htmlFor="phone">Phone</label>
+    <label htmlFor="phone">Phone <span>*</span></label>
     <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" id="phone" placeholder="+1  123 456 7890"/>
   </div>
 
@@ -103,16 +104,17 @@ export const ResumeForm = (props) => {
 <div className="form-date-group">
   <div className="form-group">
     <label htmlFor="job-1__start">Start Date</label>
-    <input type="date" value={educationStartDate} onChange={(e) => {setEducationStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
+    <input type="month" value={educationStartDate} onChange={(e) => {setEducationStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
   </div>
   <div className="form-group">
     <label htmlFor="job-1__end">End Date</label>
-    <input type="date" value={educationEndDate} onChange={(e) => {setEducationEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
+    <input type="month" value={educationEndDate} onChange={(e) => {setEducationEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
   </div>
 </div>
 
-
-
+<div class="add-element">
+<a href="#add"><i class="fas fa-plus-circle"></i> Add Another </a>
+</div>
   <div className="line-break"></div>
 
   <h2>Work Experience</h2>
@@ -129,11 +131,11 @@ export const ResumeForm = (props) => {
   <div className="form-date-group">
     <div className="form-group">
       <label htmlFor="job-1__start">Start Date</label>
-      <input type="date" value={jobStartDate} onChange={(e) => {setJobStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
+      <input type="month" value={jobStartDate} onChange={(e) => {setJobStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
     </div>
     <div className="form-group">
       <label htmlFor="job-1__end">End Date</label>
-      <input type="date" value={jobEndDate} onChange={(e) => {setJobEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
+      <input type="month" value={jobEndDate} onChange={(e) => {setJobEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
     </div>
   </div>
 
@@ -148,6 +150,7 @@ export const ResumeForm = (props) => {
   <div className="form-group">
     <label htmlFor="job-1__details">Add Skills</label>
     <input type="text" className="form-control"/>
+    <button class="btn btn-info">Add</button>
   </div>
   
   {/* <div className="line-break"></div>
