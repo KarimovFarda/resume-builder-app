@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './resumeForm.scss'
 import { useHistory } from 'react-router'
 export const ResumeForm = (props) => {
@@ -20,13 +20,21 @@ export const ResumeForm = (props) => {
     const [jobStartDate, setJobStartDate] = useState("")
     const [jobEndDate, setJobEndDate] = useState("")
     const [image, setImage] = useState(null)
+    const [skillName,setSkillName] = useState("")
     const [skills,setSkills] = useState([])
     const [skillCount,setSkillCount] = useState(0)
    function formSubmitted(e){
        e.preventDefault()
-        props.getValue({fullname : fullName,image:image,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
+        props.getValue({fullname : fullName,image:image,skills:skills,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate})
         history.push("/template")
    }
+   useEffect(() => {
+     if(skillName){
+    skills.push(skillName)
+    setSkills(skills)
+    setSkillName("")
+     }
+   },[skillCount])
     return (
 
 <form onSubmit={formSubmitted}>
@@ -146,13 +154,25 @@ export const ResumeForm = (props) => {
 
   <div className="line-break"></div>
   <h2>Skills</h2>
+  <label htmlFor="job-1__details" class="input-group-label">Add Skills</label>
 
-  <div className="form-group">
-    <label htmlFor="job-1__details">Add Skills</label>
-    <input type="text" className="form-control"/>
-    <button class="btn btn-info">Add</button>
-  </div>
+  <div className="input-group">
+    <input type="text" value={skillName} onChange={(e) => setSkillName(e.target.value)} className="form-control"/>
+    <button class="btn btn-info input-group-text" onClick={(e) => {setSkillCount(skillCount + 1);e.preventDefault()}} >Add</button>
   
+  </div>
+  <div class="d-flex w-100">
+  {skills && skills.map(function(item){
+    return (
+      <div class="alert alert-secondary alert-dismissible fade show " role="alert">
+    <strong>{item}</strong>
+    <button  type="button" class="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {skills.splice(skills.indexOf(item),1);setSkillCount(skillCount-1);setSkills(skills)}}>
+    &times;
+    </button>
+  </div>
+    )
+  })}
+  </div>
   {/* <div className="line-break"></div>
 
   <h3>Past Job</h3>

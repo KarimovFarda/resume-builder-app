@@ -1,6 +1,7 @@
 import React from 'react'
 import './resumeTemplate.scss'
 export const ResumeTemplate = (props) => {
+  console.log(props.formValues.skills)
   return (
 <div class="resume">
    <div class="resume_left">
@@ -61,51 +62,17 @@ export const ResumeTemplate = (props) => {
            <p class="bold">skill's</p>
          </div>
          <ul>
-           <li>
-             <div class="skill_name">
-               HTML
-             </div>
-             <div class="skill_progress">
-               <span style={{width: "80%"}}></span>
-             </div>
-             <div class="skill_per">80%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               CSS
-             </div>
-             <div class="skill_progress">
-               <span style={{width: "70%"}}></span>
-             </div>
-             <div class="skill_per">70%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               SASS
-             </div>
-             <div class="skill_progress">
-               <span style={{width: "90%"}}></span>
-             </div>
-             <div class="skill_per">90%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               JS
-             </div>
-             <div class="skill_progress">
-               <span style={{width: "60%"}}></span>
-             </div>
-             <div class="skill_per">60%</div>
-           </li>
-           <li>
-             <div class="skill_name">
-               JQUERY
-             </div>
-             <div class="skill_progress">
-               <span style={{width: '88%'}}></span>
-             </div>
-             <div class="skill_per">88%</div>
-           </li>
+           {props.formValues.skills && props.formValues.skills.map((item) => {
+             return (
+              <li class="skill_name">
+              <div class="icon-interest">
+                </div>
+                  {item}
+              </li>
+             )
+           })}
+         
+        
          </ul>
        </div>
        <div class="resume_item resume_social">
