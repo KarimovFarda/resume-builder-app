@@ -1,0 +1,25 @@
+export interface IResume {
+  fullname: String,
+  title: String,
+  email: String,
+  address: String,
+  phone : String,
+  linkedin : String,
+  websiteUrl : String,
+  universityName : String,
+  professionName : String,
+  universityStartDate : String,
+  universityEndDate : String,
+  companyName : String,
+  positionName : String,
+  jobStartDate : String,
+  jobEndDate : String,
+  positionDetails : String,
+  skills : String,
+  certificateName : String,
+  institutionName : String,
+  certificateStartDate : String,
+  certificateExpirationDate : String,
+  hobbies : String
+}
+
