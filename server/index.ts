@@ -7,7 +7,6 @@ const uri = "mongodb+srv://fardaKarimov:ElgZTRHF2zQOEt7a@cluster0.zparz.mongodb.
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-
 });
 
 const db = mongoose.connection;
@@ -18,7 +17,7 @@ export const app = express();
 app.use(cors());
 app.use(express.json());
 
-const port = 8502;
+const port = 8800;
 
 ROUTES.forEach(route => {
     app.use(route.path, route.router);

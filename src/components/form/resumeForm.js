@@ -13,12 +13,12 @@ export const ResumeForm = (props) => {
     const [about,setAbout] = useState("")
     const [universityName,setUniversityName] = useState("")
     const [profession, setProfession] = useState("")
-    let [educationStartDate, setEducationStartDate] = useState("")
-    let [educationEndDate, setEducationEndDate] = useState("")
+    let   [educationStartDate, setEducationStartDate] = useState("")
+    let   [educationEndDate, setEducationEndDate] = useState("")
     const [companyName,setCompanyName] = useState("")
     const [positionName, setPositionName] = useState("")
-    let [jobStartDate, setJobStartDate] = useState("")
-    let [jobEndDate, setJobEndDate] = useState("")
+    let   [jobStartDate, setJobStartDate] = useState("")
+    let   [jobEndDate, setJobEndDate] = useState("")
     const [image, setImage] = useState(null)
     const [skillName,setSkillName] = useState("")
     const [skills,setSkills] = useState([])
@@ -30,6 +30,7 @@ export const ResumeForm = (props) => {
     const [institutionName,setInstitutionName] = useState("")
     let [issueDate,setIssueDate] = useState("")
     let [expirationDate,setExpirationDate] = useState("")
+    const [educationPlaceCount,setEducationPlaceCount] = useState("")
     const monthName = ["January","February",'March',"April","May","June","July","August","September","October","November","December"]
       
       function formSubmitted(e){
@@ -106,6 +107,8 @@ export const ResumeForm = (props) => {
    setHobbyName("")
     }
   },[hobbyCount])
+
+
     return (
 
 <form onSubmit={formSubmitted}>
@@ -150,12 +153,12 @@ export const ResumeForm = (props) => {
     <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="email" placeholder="example@mail.com"/>
     <div id="email__error" className="error"></div>
   </div>
-      <div class="row">
-    <div class="col">
+      <div className="row">
+    <div className="col">
     <label htmlFor="email">Linkedin</label>
     <input type="text" value={linkedinAccount} onChange={(e) => setLinkedinAccount(e.target.value)} name="Linkedin" id="Linkedin" placeholder="Enter Linkedin Address"/>
       </div>
-    <div class="col">
+    <div className="col">
     <label htmlFor="email">Website</label>
     <input type="text" value={websiteUrl} onChange={(e) => setWebsiteUrl(e.target.value)}name="Linkedin" id="Linkedin" placeholder="Enter Website URL"/>
   </div>
@@ -172,27 +175,8 @@ export const ResumeForm = (props) => {
 
 <h2>Education</h2>
 
-<div className="form-group">
-  <label htmlFor="job-1__details">University Name</label>
-  <input type="text" className="form-control" value={universityName} onChange={(e) => {setUniversityName(e.target.value)}}/>
-</div>
-<div className="form-group">
-  <label htmlFor="job-1__details">Profession</label>
-  <input type="text" className="form-control" value={profession} onChange={(e) => {setProfession(e.target.value)}}/>
-</div>
-<div className="form-date-group">
-  <div className="form-group">
-    <label htmlFor="job-1__start">Start Date</label>
-    <input type="month" value={educationStartDate} onChange={(e) => {setEducationStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
-  </div>
-  <div className="form-group">
-    <label htmlFor="job-1__end">End Date</label>
-    <input type="month" value={educationEndDate} onChange={(e) => {setEducationEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
-  </div>
-</div>
-
-<div class="add-element">
-<a href="#add"><i class="fas fa-plus-circle"></i> Add Another </a>
+<div className="add-element">
+<a href="#add" ><i className="fas fa-plus-circle"></i> Add Another </a>
 </div>
   <div className="line-break"></div>
 
@@ -225,19 +209,19 @@ export const ResumeForm = (props) => {
 
   <div className="line-break"></div>
   <h2>Skills</h2>
-  <label htmlFor="job-1__details" class="input-group-label">Add Skills</label>
+  <label htmlFor="job-1__details" className="input-group-label">Add Skills</label>
 
   <div className="input-group">
     <input type="text" value={skillName} onChange={(e) => setSkillName(e.target.value)} className="form-control"/>
-    <button class="btn btn-info input-group-text" onClick={(e) => {setSkillCount(skillCount + 1);e.preventDefault()}} >Add</button>
+    <button className="btn btn-info input-group-text" onClick={(e) => {setSkillCount(skillCount + 1);e.preventDefault()}} >Add</button>
   
   </div>
-  <div class="d-flex w-100">
+  <div className="d-flex w-100">
   {skills && skills.map(function(item){
     return (
-      <div class="alert alert-secondary alert-dismissible fade show " role="alert">
+      <div className="alert alert-secondary alert-dismissible fade show " role="alert">
     <strong>{item}</strong>
-    <button  type="button" class="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {skills.splice(skills.indexOf(item),1);setSkillCount(skillCount-1);setSkills(skills)}}>
+    <button  type="button" className="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {skills.splice(skills.indexOf(item),1);setSkillCount(skillCount-1);setSkills(skills)}}>
     &times;
     </button>
   </div>
@@ -272,7 +256,7 @@ export const ResumeForm = (props) => {
 
   <div className="line-break"></div>
   <h2>Hobbies</h2>
-  <label htmlFor="job-1__details" class="input-group-label">Add Hobbies</label>
+  <label htmlFor="job-1__details" className="input-group-label">Add Hobbies</label>
 
   <div className="input-group">
     <input type="text" value={hobbyName} onChange={(e) => setHobbyName(e.target.value)} onKeyUp={(e) => {
@@ -281,15 +265,15 @@ export const ResumeForm = (props) => {
     }
     }
        className="form-control"/>
-    <button class="btn btn-info input-group-text"  onClick={(e) => {setHobbyCount(hobbyCount + 1);e.preventDefault()}} >Add</button>
+    <button className="btn btn-info input-group-text"  onClick={(e) => {setHobbyCount(hobbyCount + 1);e.preventDefault()}} >Add</button>
   
   </div>
-  <div class="d-flex w-100">
+  <div className="d-flex w-100">
   {hobbies && hobbies.map(function(item){
     return (
-      <div class="alert alert-secondary alert-dismissible fade show " role="alert">
+      <div className="alert alert-secondary alert-dismissible fade show " role="alert">
     <strong>{item}</strong>
-    <button  type="button" class="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {hobbies.splice(hobbies.indexOf(item),1);setHobbyCount(hobbyCount-1);setHobbies(hobbies)}}>
+    <button  type="button" className="button-close" data-dismiss="alert" aria-label="Close" onClick={() => {hobbies.splice(hobbies.indexOf(item),1);setHobbyCount(hobbyCount-1);setHobbies(hobbies)}}>
     &times;
     </button>
   </div>

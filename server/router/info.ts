@@ -9,7 +9,7 @@ resumeRouter.get("/", async (req: Request, res: Response) => {
         const resumeData = await ResumeData.find();
         res.status(200).json(resumeData);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: "Error occured" });
     }
 })
 
@@ -23,7 +23,7 @@ resumeRouter.post("/", async (req: Request, res: Response) => {
         res.status(200).json(newResume);
 
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message:  "Error occured" });
     }
 })
 
@@ -43,7 +43,7 @@ resumeRouter.put("/:id", async (req: Request, res: Response) => {
         }
 
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message:  "Error occured" });
     }
 })
 
@@ -59,7 +59,7 @@ resumeRouter.delete("/:id", async (req: Request, res: Response) => {
             res.json({ message: "Product Deleted." })
         }
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message:  "Error occured" });
     }
 })
 
