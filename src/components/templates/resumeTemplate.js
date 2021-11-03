@@ -1,7 +1,18 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './resumeTemplate.scss'
+import axios from 'axios';
 export const ResumeTemplate = (props) => {
+  const [resumeData,setResumeData] = useState("")
+  useEffect(() => {
+    axios.get("http://localhost:8800/resume").then(
+  response => {
+    setResumeData(response.data[0])
+  }
+)
+  },[])
 
+
+  console.log(resumeData)
   return (
 <div class="resume">
    <div class="resume_left">
@@ -11,8 +22,8 @@ export const ResumeTemplate = (props) => {
      <div class="resume_content">
        <div class="resume_item resume_info">
          <div class="title">
-           <p class="bold">{props && props.formValues.fullName}</p>
-           <p class="regular">{props && props.formValues.title}</p>
+           <p class="bold">{resumeData && resumeData.fullName}</p>
+           <p class="regular">{resumeData && resumeData.title}</p>
          </div>
          <ul>
            <li>
@@ -20,7 +31,7 @@ export const ResumeTemplate = (props) => {
                <i class="fas fa-map-signs"></i>
              </div>
              <div class="data">
-			 {props && props.formValues.address}
+			 {resumeData && resumeData.address}
              </div>
            </li>
            <li>
@@ -28,14 +39,14 @@ export const ResumeTemplate = (props) => {
                <i class="fas fa-mobile-alt"></i>
              </div>
              <div class="data">
-			 {props && props.formValues.phoneNumber}             </div>
+			 {resumeData && resumeData.phone}             </div>
            </li>
            <li>
              <div class="icon">
                <i class="fas fa-envelope"></i>
              </div>
              <div class="data">
-			 {props && props.formValues.email}
+			 {resumeData && resumeData.email}
              </div>
            </li>
            <li>
@@ -43,7 +54,7 @@ export const ResumeTemplate = (props) => {
                <i class="fab fa-weebly"></i>
              </div>
              <div class="data">
-			 {props && props.formValues.websiteUrl}
+			 {resumeData && resumeData.websiteUrl}
              </div>
            </li>
 		   <li>
@@ -51,7 +62,7 @@ export const ResumeTemplate = (props) => {
 			 <i class="fab fa-linkedin"></i>
              </div>
              <div class="data">
-			 {props && props.formValues.linkedinAccount}
+			 {resumeData && resumeData.linkedin}
              </div>
            </li>
 
@@ -112,10 +123,10 @@ export const ResumeTemplate = (props) => {
         <ul>
             <li>
                 <div class="info">
-                     <h6>{props && props.formValues.positionName}</h6> 
-                  <h6>{props && props.formValues.companyName}</h6>
+                     <h6>{resumeData && resumeData.positionName}</h6> 
+                  <h6>{resumeData && resumeData.companyName}</h6>
                 </div>
-                <div class="date">{props && props.formValues.jobStartDate} - {props && props.formValues.jobEndDate}</div> 
+                <div class="date">{resumeData && resumeData.jobStartDate} - {resumeData && resumeData.jobEndDate}</div> 
 
             </li>
            
@@ -128,10 +139,10 @@ export const ResumeTemplate = (props) => {
       <ul>
             <li>
                 <div class="info">
-                     <h6>{props && props.formValues.positionName}</h6> 
-                  <h6>{props && props.formValues.universityName}</h6>
+                     <h6>{resumeData && resumeData.professionName}</h6> 
+                  <h6>{resumeData && resumeData.universityName}</h6>
                 </div>
-                <div class="date">{props && props.formValues.educationStartDate} - {props && props.formValues.educationEndDate}</div> 
+                <div class="date">{resumeData && resumeData.universityStartDate} - {resumeData && resumeData.universityEndDate}</div> 
 
             </li>
          
@@ -145,10 +156,10 @@ export const ResumeTemplate = (props) => {
             <li>
 
                 <div class="info">
-                     <h6>{props && props.formValues.certificateName}</h6> 
-                  <h6>{props && props.formValues.institutionName}</h6>
+                     <h6>{resumeData && resumeData.certificateName}</h6> 
+                  <h6>{resumeData && resumeData.institutionName}</h6>
                 </div>
-                <div class="date">{props && props.formValues.issueDate} - {props && props.formValues.expirationDate}</div> 
+                <div class="date">{resumeData && resumeData.certificateStartDate} - {resumeData && resumeData.certificateExpirationDate}</div> 
 
             </li>
          

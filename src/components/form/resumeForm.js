@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import axios from 'axios';
 import './resumeForm.scss'
 import { useHistory } from 'react-router'
 export const ResumeForm = (props) => {
@@ -30,7 +31,7 @@ export const ResumeForm = (props) => {
     const [institutionName,setInstitutionName] = useState("")
     let [issueDate,setIssueDate] = useState("")
     let [expirationDate,setExpirationDate] = useState("")
-    const [educationPlaceCount,setEducationPlaceCount] = useState("")
+    const [positionDetails,setPositionDetails] = useState("")
     const monthName = ["January","February",'March',"April","May","June","July","August","September","October","November","December"]
       
       function formSubmitted(e){
@@ -79,7 +80,6 @@ export const ResumeForm = (props) => {
 
       }
 
-
       if(Number(issueDate.slice(5)) > 9){
         issueDate = issueDate.slice(0,4) + " " + monthName[Number(issueDate.slice(5)) - 1]
         
@@ -90,7 +90,38 @@ export const ResumeForm = (props) => {
         props.getValue({fullname : fullName,image:image,skills:skills,hobbies:hobbies,address : address,phoneNumber : phoneNumber,email : email, linkedinAccount : linkedinAccount,websiteUrl : websiteUrl,title:title,about:about,universityName:universityName,profession:profession,educationStartDate:educationStartDate,educationEndDate:educationEndDate,companyName:companyName,positionName:positionName,jobStartDate:jobStartDate,jobEndDate:jobEndDate,    certificateName:certificateName,institutionName:institutionName,expirationDate:expirationDate,issueDate:issueDate
         })
       
-        history.push("/template")
+        axios.post("http://localhost:8800/resume",
+    {
+      fullname: fullName,
+      title: title,
+      email: email,
+      address: address,
+      phone : phoneNumber,
+      linkedin : linkedinAccount,
+      websiteUrl : websiteUrl,
+      universityName : universityName,
+      professionName : profession,
+      universityStartDate : educationStartDate,
+      universityEndDate : educationEndDate,
+      companyName : companyName,
+      positionName : positionName,
+      jobStartDate : jobStartDate,
+      jobEndDate : jobEndDate,
+      positionDetails : positionDetails,
+      skills : String(skills),
+      certificateName : certificateName,
+      institutionName : institutionName,
+      certificateStartDate : issueDate,
+      certificateExpirationDate : expirationDate,
+      hobbies : String(hobbies)
+        }).then((response) => {
+          console.log(response)
+          history.push("/template");
+        }).catch(err => {
+          console.log(err)
+        }
+        )
+       
 
    }
    useEffect(() => {
@@ -127,7 +158,7 @@ export const ResumeForm = (props) => {
 
   <div className="form-group">
     <label htmlFor="name">Image for Resume <span>*</span></label>
-    <input type="file"  onChange={e=>setImage(URL.createObjectURL(e.target.files[0]))} name="name" id="name" placeholder="Robert Norman Ross"/>
+    <input type="file" onChange={e=>setImage(URL.createObjectURL(e.target.files[0]))} name="name" id="name" placeholder="Robert Norman Ross"/>
     <div id="name__error" className="error"></div>
   </div>
 
@@ -175,6 +206,25 @@ export const ResumeForm = (props) => {
 
 <h2>Education</h2>
 
+<div className="form-group">
+  <label htmlFor="job-1__details">University Name</label>
+  <input type="text" className="form-control" value={universityName} onChange={(e) => {setUniversityName(e.target.value)}}/>
+</div>
+<div className="form-group">
+  <label htmlFor="job-1__details">Profession</label>
+  <input type="text" className="form-control" value={profession} onChange={(e) => {setProfession(e.target.value)}}/>
+</div>
+<div className="form-date-group">
+  <div className="form-group">
+    <label htmlFor="job-1__start">Start Date</label>
+    <input type="month" value={educationStartDate} onChange={(e) => {setEducationStartDate(e.target.value)}} name="job-1__start" id="job-1__start"/>
+  </div>
+  <div className="form-group">
+    <label htmlFor="job-1__end">End Date</label>
+    <input type="month" value={educationEndDate} onChange={(e) => {setEducationEndDate(e.target.value)}} name="job-1__end" id="job-1__end"/>
+  </div>
+</div>
+<br/>
 <div className="add-element">
 <a href="#add" ><i className="fas fa-plus-circle"></i> Add Another </a>
 </div>
@@ -204,7 +254,7 @@ export const ResumeForm = (props) => {
 
   <div className="form-group">
     <label htmlFor="job-1__details">Position Details</label>
-    <textarea name="job-1__details" id="job-1__details"></textarea>
+    <textarea value={positionDetails} onChange={(e) => setPositionDetails(e.target.value)}  name="job-1__details" id="job-1__details"></textarea>
   </div>
 
   <div className="line-break"></div>
