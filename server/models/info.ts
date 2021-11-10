@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-
 const resumeSchema = new Schema({
     fullname: {
         type: String,

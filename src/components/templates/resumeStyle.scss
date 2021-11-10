@@ -1,0 +1,335 @@
+// body
+// {
+//     background: #40b9ae; /* fallback for old browsers */
+//     background: -webkit-linear-gradient(to left, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+//     background:         linear-gradient(to left, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// }
+
+// .shadow
+// {
+//     text-align: center;
+
+//     color: #fff;
+//     text-shadow: 1px 1px rgba(0,0,0,.35);
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5
+// {
+//     font-family: 'Ubuntu', sans-serif;
+//     font-weight: 100;
+// }
+
+// p,
+// span
+// {
+//     font-family: 'Didact Gothic', sans-serif;
+// }
+
+// .left
+// {
+//     float: left;
+// }
+
+// .resume
+// {
+//     width: 900px;
+//     height: 960px;
+//     margin: 50px auto 25px;
+//     padding: 20px 0 30px;
+
+//     border-radius: 3px;
+//     background-color: #fff;
+//     box-shadow: 0 0 15px rgba(0,0,0,.15);
+// }
+
+// .plate
+// {
+//     position: relative;
+
+//     float: left;
+
+//     width: 400px;
+//     height: 250px;
+//     margin: 0 15px;
+//     padding: 10px;
+// }
+
+// .quote
+// {
+//     float: left;
+
+//     width: 4px;
+//     height: 21px;
+
+//     background-color: #40b9ae;
+// }
+
+// .outside
+// {
+//     position: relative;
+
+//     width: 145px;
+//     height: 145px;
+
+//     background: #40b9ae; /* fallback for old browsers */
+//     background: -webkit-linear-gradient(to top, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+//     background:         linear-gradient(to top, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+//     -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+// }
+
+// .selfie
+// {
+//     position: absolute;
+//     top: 5px;
+//     left: 5px;
+
+//     width: 135px;
+//     height: 135px;
+
+//     background: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/c152.0.320.320/p320x320/14046114_675186845980655_4981114054095761764_n.jpg?oh=c2b9cfc65123aefc33499ab8bfb0cad7&oe=58731CA1);
+//     background-repeat: no-repeat;
+//     -webkit-background-size: contain;
+//          -o-background-size: contain;
+//             background-size: contain;
+
+//     -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+// }
+
+// .name
+// {
+//     float: left;
+
+//     margin: 46px 0 0;
+// }
+
+// .progressbar
+// {
+//     width: auto;
+//     height: 100%;
+//     margin: 0 25px;
+//     padding: 0;
+
+//     border: 1px solid #3ad88f;
+// }
+
+// .progressbar .percent
+// {
+//     height: 15px;
+
+//     background: #40b9ae; /* fallback for old browsers */
+//     background: -webkit-linear-gradient(to left, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+//     background:         linear-gradient(to left, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// }
+
+// .per85
+// {
+//     width: 85%;
+// }
+
+// .per80
+// {
+//     width: 80%;
+// }
+// .per70
+// {
+//     width: 70%;
+// }
+// .per60
+// {
+//     width: 60%;
+// }
+
+// .timeline
+// {
+//     float: left;
+
+//     width: 15px;
+//     margin: 0 10px 0 25px;
+//     padding: 0;
+// }
+
+// .spot
+// {
+//     width: 12px;
+//     height: 12px;
+
+//     border-radius: 100%;
+//     background-color: #40b9ae;
+// }
+// .line
+// {
+//     width: 2px;
+//     height: 120px;
+//     margin: 0 0 0 5px;
+
+//     background: #40b9ae; /* fallback for old browsers */
+//     background: -webkit-linear-gradient(to top, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+//     background:         linear-gradient(to top, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// }
+
+// .plate > div .exp
+// {
+//     margin: 5px 0 5px !important;
+//     padding: 0 0 0 30px;
+// }
+
+// .plate h2
+// {
+//     font-size: 18px;
+
+//     margin: 30px 0 20px;
+
+//     text-transform: uppercase;
+// }
+
+// .plate h3
+// {
+//     font-size: 15.2px;
+// }
+
+// .name > h2
+// {
+//     margin: 0;
+//     padding: 0;
+// }
+
+// .name .major
+// {
+//     margin: 0;
+//     padding: 5px 0;
+
+//     color: #40b9ae;
+// }
+
+// .name > h2 span
+// {
+//     font-size: 11px;
+// }
+
+// .plate  h2 > .quote
+// {
+//     margin: 0 8px 0 10px;
+// }
+
+// .plate p
+// {
+//     font-size: 13px;
+//     line-height: 20px;
+
+//     margin: 15px 25px;
+// }
+
+// .plate > p span
+// {
+//     color: #40b9ae;
+// }
+
+// .plate h5
+// {
+//     margin: 5px 25px;
+// }
+
+// .plate > .skills h5
+// {
+//     color: #40b9ae;
+// }
+
+// .plate .career
+// {
+//     display: inline-block;
+// }
+
+// .plate .year
+// {
+//     margin: 0;
+
+//     color: #40b9ae;
+// }
+
+// .cap
+// {
+//     position: relative;
+// }
+
+// .web
+// {
+//     position: absolute;
+//     top: 100px;
+//     left: 30px;
+// }
+
+// .uiux
+// {
+//     position: absolute;
+//     top: 215px;
+//     left: 220px;
+// }
+
+// .wd
+// {
+//     position: absolute;
+//     top: 100px;
+//     left: 150px;
+// }
+
+// .gd
+// {
+//     position: absolute;
+//     top: 215px;
+//     left: 100px;
+// }
+
+// .plate > div .cookie
+// {
+//     display: block;
+
+//     width: 140px;
+//     height: 140px;
+//     margin: 0;
+//     padding: 0;
+
+//     background: #40b9ae; /* fallback for old browsers */
+//     background: -webkit-linear-gradient(to top, #3ad88f , #40b9ae); /* Chrome 10-25, Safari 5.1-6 */
+//     background:         linear-gradient(to top, #3ad88f , #40b9ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+//     -webkit-clip-path: polygon(50% 5%, 90% 30%, 90% 70%, 50% 95%, 10% 70%, 10% 30%);
+// }
+
+// .plate > div .cookie h4
+// {
+//     font-size: 13px;
+
+//     margin: 0;
+//     padding: 65px 0;
+
+//     text-align: center;
+
+//     color: #fff;
+//     text-shadow: 1px 1px rgba(0,0,0,.35);
+// }
+
+// .resume > .insterest
+// {
+//     margin: 0;
+//     padding: 0;
+// }
+
+// .interest > ul
+// {
+//     display: inline;
+
+//     margin: 0 20px;
+//     padding: 0;
+// }
+
+// .interest > ul li
+// {
+//     display: inline;
+
+//     padding: 0 5px 0 0;
+// }
