@@ -20,7 +20,7 @@ export const ResumeForm = (props: any) => {
   const [positionName, setPositionName] = useState("")
   let [jobStartDate, setJobStartDate] = useState("")
   let [jobEndDate, setJobEndDate] = useState("")
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState<any>(null)
   const [skillName, setSkillName] = useState("")
   const [skills, setSkills] = useState<any>([])
   const [skillCount, setSkillCount] = useState(0)
@@ -163,6 +163,10 @@ export const ResumeForm = (props: any) => {
         <input type="file"
         //  onChange={e => setImage(URL.createObjectURL(e.target.files[0]))} 
          
+        onChange={e => {
+          setImage(String(e?.target?.files?.[0]));
+
+        }}
          name="name" id="name" placeholder="Robert Norman Ross" />
         <div id="name__error" className="error"></div>
       </div>
