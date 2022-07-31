@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 import express from 'express';
 import cors from 'cors';
 import ROUTES from './routes';
-
-const uri = "mongodb+srv://fardaKarimov:ElgZTRHF2zQOEt7a@cluster0.zparz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+import 'dotenv/config'
+const uri = `${process.env.MONGODB_URL}`;
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

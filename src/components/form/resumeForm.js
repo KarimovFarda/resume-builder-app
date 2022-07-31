@@ -130,14 +130,14 @@ export const ResumeForm = (props) => {
     setSkills(skills)
     setSkillName("")
      }
-   },[skillCount])
+   },[skillCount, skillName, skills])
    useEffect(() => {
     if(hobbyName){
    hobbies.push(hobbyName)
    setHobbies(hobbies)
    setHobbyName("")
     }
-  },[hobbyCount])
+  },[hobbies, hobbyCount, hobbyName])
 
 
     return (

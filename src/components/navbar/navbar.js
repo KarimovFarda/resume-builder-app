@@ -9,25 +9,25 @@ export const Navbar = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">Hidden brand</a>
+      <a class="navbar-brand" href="#test">Hidden brand</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
+          <a class="nav-link" aria-current="page" href="#test">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#test">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Disabled</a>
+          <a class="nav-link" href='#test'>Disabled</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Services</a>
+          <a class="nav-link" aria-current="page" href="#test">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About us</a>
+          <a class="nav-link" href="#test">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Contact Us</a>
+          <a class="nav-link" href='#test'>Contact Us</a>
         </li>
       </ul>
 
